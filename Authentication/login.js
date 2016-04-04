@@ -13,7 +13,7 @@ function authHandler(error, authData) {
      self.location.href = "./dashboard/dashboard.html"; 
   }
 }
-var ref = new Firebase("https://grabbr.firebaseio.com");
+var ref = new Firebase("https://<YOUR FIREBASE>.firebaseio.com");
 ref.authWithPassword({
   email    : document.forms.login.email.value,
   password : document.forms.login.pass.value
