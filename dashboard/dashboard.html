@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html ng-app="dashApp">
+<head>
+        <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/main.css">
+ <script src="../dependancies/jquery.js"></script>
+  <!-- Compiled and minified JavaScript -->
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+     <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+  <script src="../image_load.js"></script>
+  <script src="../dependancies/handlebars.js"></script>
+  <script src="../dependancies/jquery.js"></script>
+<script src="https://cdn.firebase.com/libs/angularfire/1.0.0/angularfire.min.js"></script>
+        
+         
+  <script src="../image_load.js"></script>
+  <script src="../dependancies/handlebars.js"></script>
+ 
+    <script src="./app.js"></script>
+</head>
+<body ng-controller="SideMenu">
+     <!-- !Are you Authenticated Script! -->
+    
+    <!--Side Menu -->
+    <script>
+        $(window).load(function() {
+		// Animate loader off screen
+		$(".loader").fadeOut("slow");
+	});
+                
+        function authDataCallback(authData) {
+  if (authData) {
+    console.log("User " + authData.uid + " is logged in with " + authData.provider);
+  } else {
+    console.log("User is logged out");
+    window.location = "../index.html";
+  }
+}
+// Register the callback to be fired every time auth state changes
+var ref = new Firebase("https://grabbr.firebaseio.com");
+ref.onAuth(authDataCallback);
+        </script>
+    <div class="loader"><i class="loader__tile loader__tile__1"></i><i class="loader__tile loader__tile__2"></i><i class="loader__tile loader__tile__3"></i><i class="loader__tile loader__tile__4"></i><i class="loader__tile loader__tile__5"></i><i class="loader__tile loader__tile__6"></i><i class="loader__tile loader__tile__7"></i><i class="loader__tile loader__tile__8"></i><i class="loader__tile loader__tile__9"></i></div>
+
+
+    <div>
+        <script src="../logout.js"></script>
+<button id="logout" onclick="logout()">Logout</button>
+    
+<h1> {{title}} </h1>
+        <div class="example-chat-toolbar">
+        <label for="nameInput">Username:</label>
+        <input ng-model="name" type="text" id="nameInput" placeholder="enter a username...">
+      </div>
+        <ul id="example-messages" class="example-chat-messages">
+  <li ng-repeat="msg in messages">
+    <strong class="example-chat-username">{{ msg.from }}</strong>
+    {{ msg.body }}
+  </li>
+</ul>
+         <footer>
+        <input ng-model="msg" ng-keydown="addMessage($event)" type="text" id="messageInput"  placeholder="Type a message...">
+        </footer>
+        <!--
+<h2>{{user.name}}</h2>
+    
+    <section id="rentals">
+    <div id="image">
+    {{rental.image}}
+    </div>
+    <p>{{rental.description}}</p>
+    <p>{{rental.price}}</p>
+    <p>{{rental.size}}</p>
+    <p>{{rental.location}}</p>
+        -->
+        
+        
+        
+        </div>
+  
+        
+ 
+  
+</body>
+</html>

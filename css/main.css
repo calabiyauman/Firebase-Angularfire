@@ -1,0 +1,114 @@
+#signup_btn{
+    border-radius: 5px;
+    width: 100px;
+    text-align: center;
+
+}
+
+    .loader {
+  width: 100px;
+  height: 100px;
+  -webkit-perspective: 100px;
+          perspective: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -50px;
+}
+
+.loader__tile {
+  display: block;
+  float: left;
+  width: 33.33%;
+  height: 33.33%;
+  -webkit-animation-name: flip;
+          animation-name: flip;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+  z-index: 0;
+}
+
+.loader__tile__1 {
+  background-color: #943048;
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+
+.loader__tile__2 {
+  background-color: #d7532d;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+
+.loader__tile__3 {
+  background-color: #d2cabb;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+
+.loader__tile__4 {
+  background-color: #9faad0;
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+
+.loader__tile__5 {
+  background-color: #b39a3b;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+.loader__tile__6 {
+  background-color: #dc2c34;
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+
+.loader__tile__7 {
+  background-color: #ece5be;
+  -webkit-animation-delay: 0.7s;
+          animation-delay: 0.7s;
+}
+
+.loader__tile__8 {
+  background-color: #d07500;
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+}
+
+.loader__tile__9 {
+  background-color: #7983a9;
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+}
+
+@-webkit-keyframes flip {
+  0% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  11% {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+  }
+}
+
+@keyframes flip {
+  0% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  11% {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+  }
+}

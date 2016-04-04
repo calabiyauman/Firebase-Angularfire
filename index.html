@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <!--Load Styles -->
+      <!-- Compiled and minified CSS 
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script> -->
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./dependancies/jquery.js"></script>
+    <!-- Load backend services -->
+    <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+
+    <script src="./Authentication/signup.js"></script>
+    <script src="./Authentication/login.js"></script>
+</head>
+<body>
+<section>
+<form id="login" name="login" method="post">
+    <input type="email" name="email">
+    <input type="password" name="pass">
+    <input type="button" name="submit" value="Login" onclick="loginForm()"></button>
+    
+    </form>
+    <a href="Authentication/signup.html">
+    <button id="signup_btn">Signup</button></a>
+    <div id="error"></div>
+</section>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
