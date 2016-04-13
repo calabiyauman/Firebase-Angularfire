@@ -1,6 +1,12 @@
 //call this function to encode images to base64
 //https://developer.mozilla.org/de/docs/Web/API/FileReader
 
+ $(window).load(function() {
+		// Animate loader off screen
+		$(".loader").fadeOut("slow");
+	});
+
+
 function encodeImageFileAsURL(cb) {
     'use strict';
     return function(){

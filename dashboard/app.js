@@ -1,11 +1,11 @@
 var myApp = angular.module('dashApp',["firebase"]);
 
 myApp.controller('SideMenu', ['$scope', "$firebaseArray", function($scope, $firebaseArray) {
-    var ref = new Firebase("https://<YOUR FIREBASE>.firebaseio.com/messages");
+    var ref = new Firebase("https://hoa-mexico.firebaseio.com/messages");
     //load some data from firebase for menus
   $scope.title = 'Welcome';
   $scope.messages = $firebaseArray(ref);
- 
+  $
     //ADD MESSAGE METHOD
           $scope.addMessage = function(e) {
 

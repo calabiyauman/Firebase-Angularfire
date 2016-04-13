@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html ng-app="dashApp">
 <head>
+    
+    <script src="../image_load.js"></script>
         <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
     <link rel="stylesheet" href="../css/dashboard.css">
@@ -12,25 +14,18 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
   <script src="../image_load.js"></script>
   <script src="../dependancies/handlebars.js"></script>
-  <script src="../dependancies/jquery.js"></script>
+  
 <script src="https://cdn.firebase.com/libs/angularfire/1.0.0/angularfire.min.js"></script>
-        
+    
          
-  <script src="../image_load.js"></script>
+  
   <script src="../dependancies/handlebars.js"></script>
  
     <script src="./app.js"></script>
-</head>
-<body ng-controller="SideMenu">
-     <!-- !Are you Authenticated Script! -->
+    <script src="../sidenav.js"></script>
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     
-    <!--Side Menu -->
     <script>
-        $(window).load(function() {
-		// Animate loader off screen
-		$(".loader").fadeOut("slow");
-	});
-                
         function authDataCallback(authData) {
   if (authData) {
     console.log("User " + authData.uid + " is logged in with " + authData.provider);
@@ -40,17 +35,74 @@
   }
 }
 // Register the callback to be fired every time auth state changes
-var ref = new Firebase("https://grabbr.firebaseio.com");
+var ref = new Firebase("https://hoa-mexico.firebaseio.com");
 ref.onAuth(authDataCallback);
         </script>
+ <link rel="manifest" href="/manifest.json">
+    
+</head>
+<body ng-controller="SideMenu">
+    <header>
+        <h3 id="title"> {{title}} </h3>
+        <script src="../logout.js"></script>
+<button id="logout" class="btn waves-effect hoverable" onclick="logout()">Logout</button>
+        <div id="settings">
+            <a href="">
+        <i class="material-icons">settings</i>
+                </a>
+            </div>
+    </header>
+     <!-- !Are you Authenticated Script! -->
+    
+    <!--Side Menu -->
+    
     <div class="loader"><i class="loader__tile loader__tile__1"></i><i class="loader__tile loader__tile__2"></i><i class="loader__tile loader__tile__3"></i><i class="loader__tile loader__tile__4"></i><i class="loader__tile loader__tile__5"></i><i class="loader__tile loader__tile__6"></i><i class="loader__tile loader__tile__7"></i><i class="loader__tile loader__tile__8"></i><i class="loader__tile loader__tile__9"></i></div>
 
 
-    <div>
-        <script src="../logout.js"></script>
-<button id="logout" onclick="logout()">Logout</button>
+   
+        <ul id="slide-out" class="side-nav fixed">
+            
+            <section id="profile-image"></section>
+            
+            
+            <!--Logo-->
+            <div class="body">
+                
+            <div class="container">
+  <span class="dots"></span>
+  <span class="dots"></span>
+  <span class="dots"></span>
+  <span class="dots"></span>
+  <span class="dots"></span>
+  <span class="dots"></span>
+  <span class="dots"></span>
+  <span class="dots"></span>
+  <span class="dots"></span>
+  <span class="dots"></span>
+</div>
+                </div>
+            <!--End Logo -->
+            
+            <div id="links">
+      <li><a href="#">Message Board</a></li>
+      <li><a href="#!">Issue Tracker</a></li>
+                 </div>
+    </ul>
+    <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="mdi-navigation-menu"></i></a>
     
-<h1> {{title}} </h1>
+    <section class="video">
+    Condo Feed
+        <canvas>
+        Video Feed
+        </canvas>
+    
+    
+    </section>
+    
+
+    
+        <div class="messages">
+            <h5 class="align-center">Chat</h5>
         <div class="example-chat-toolbar">
         <label for="nameInput">Username:</label>
         <input ng-model="name" type="text" id="nameInput" placeholder="enter a username...">
@@ -64,6 +116,7 @@ ref.onAuth(authDataCallback);
          <footer>
         <input ng-model="msg" ng-keydown="addMessage($event)" type="text" id="messageInput"  placeholder="Type a message...">
         </footer>
+            </div>
         <!--
 <h2>{{user.name}}</h2>
     
@@ -79,7 +132,7 @@ ref.onAuth(authDataCallback);
         
         
         
-        </div>
+       
   
         
  
